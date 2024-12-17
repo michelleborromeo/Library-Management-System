@@ -72,16 +72,7 @@ if ($_SESSION['role_id'] != 2) {
 <body>
 
     <!-- Sidebar -->
-    <div class="sidebar">
-        <h2 class="text-white text-center">Librarian Dashboard</h2>
-        <a href="add_book.php">Add Book</a>
-        <a href="edit_book.php">Edit Book</a>
-        <a href="delete_book.php">Delete Book</a>
-        <a href="approve_requests.php">Approve Requests</a>
-        <a href="reports.php">Reports</a>
-        <a href="borrower_records.php">Borrower Records</a>
-        <a href="/php-108/library-system/logout.php" class="btn btn-danger">Logout</a>
-    </div>
+    <?php include 'sidebar.php'; ?>
 
     <!-- Toggle Button for Sidebar (on mobile) -->
     <div class="toggle-btn d-none d-md-block">

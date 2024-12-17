@@ -30,7 +30,7 @@ if (isset($_POST['action'])) {
     }
 }
 
-$sql = "SELECT transactions.transaction_id, books.title AS book_title, CONCAT(users.first_name, ' ', users.last_name) AS borrower_name, transactions.status 
+$sql = "SELECT transaction_id, title AS book_title, username AS borrower_name, status 
         FROM transactions 
         JOIN books ON transactions.book_id = books.book_id 
         JOIN users ON transactions.borrower_id = users.user_id 
@@ -105,16 +105,7 @@ $requests = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <body>
 
     <!-- Sidebar -->
-    <div class="sidebar">
-        <h2 class="text-white text-center">Librarian Dashboard</h2>
-        <a href="add_book.php">Add Book</a>
-        <a href="edit_book.php">Edit Book</a>
-        <a href="delete_book.php">Delete Book</a>
-        <a href="approve_requests.php">Approve Requests</a>
-        <a href="reports.php">Reports</a>
-        <a href="borrower_records.php">Borrower Records</a>
-        <a href="../logout.php" class="btn btn-danger">Logout</a>
-    </div>
+    <?php include 'sidebar.php'; ?>
 
     <!-- Toggle Button for Sidebar (on mobile) -->
     <div class="toggle-btn d-none d-md-block">
