@@ -7,11 +7,12 @@ if ($_SESSION['role_id'] != 2) {
     exit();
 }
 
-$sql = "SELECT username AS borrower_name, title AS book_title, borrow_date, transactions.return_date, status 
+$sql = "SELECT username AS borrower_name, title AS book_title, borrow_date, transactions.return_date, transactions.status 
         FROM transactions 
         JOIN users ON transactions.borrower_id = users.user_id 
         JOIN books ON transactions.book_id = books.book_id
         ORDER BY transactions.borrow_date DESC";
+
 $stmt = $conn->query($sql);
 $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>

@@ -7,9 +7,9 @@ if ($_SESSION['role_id'] != 1) {
     exit();
 }
 
-$sql = "SELECT logs.user_id, users.username, logs.action, logs.table_name, logs.timestamp 
+$sql = "SELECT logs.log_id, users.username, logs.action, logs.timestamp 
         FROM logs 
-        JOIN users ON logs.user_id = users.id 
+        JOIN users ON logs.user_id = users.user_id 
         ORDER BY logs.timestamp DESC";
 $stmt = $conn->query($sql);
 $logs = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -30,7 +30,6 @@ $logs = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <tr>
                     <th>User</th>
                     <th>Action</th>
-                    <th>Table</th>
                     <th>Timestamp</th>
                 </tr>
             </thead>
@@ -39,7 +38,6 @@ $logs = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <tr>
                     <td><?php echo htmlspecialchars($log['username']); ?></td>
                     <td><?php echo htmlspecialchars($log['action']); ?></td>
-                    <td><?php echo htmlspecialchars($log['table_name']); ?></td>
                     <td><?php echo htmlspecialchars($log['timestamp']); ?></td>
                 </tr>
                 <?php endforeach; ?>

@@ -99,6 +99,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <a href="delete_book.php">Delete Book</a>
     <a href="manage_users.php">Manage Users</a>
     <a href="reports.php">Reports</a>
+    <a href="configuration.php">Configuration</a>
+    <a href="manage_books.php">Manage Books</a>
+    <a href="activity_logs.php">Activity Logs</a>
     <a href="/php-108/library-system/logout.php" class="btn btn-danger">Logout</a>
 </div>
     

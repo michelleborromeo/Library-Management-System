@@ -30,7 +30,7 @@ if (isset($_POST['action'])) {
     }
 }
 
-$sql = "SELECT transaction_id, title AS book_title, username AS borrower_name, status 
+$sql = "SELECT transactions.transaction_id, books.title AS book_title, users.username AS borrower_name, transactions.status 
         FROM transactions 
         JOIN books ON transactions.book_id = books.book_id 
         JOIN users ON transactions.borrower_id = users.user_id 
