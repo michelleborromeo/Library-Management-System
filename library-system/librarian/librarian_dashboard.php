@@ -80,7 +80,7 @@ if ($_SESSION['role_id'] != 2) {
         <a href="approve_requests.php">Approve Requests</a>
         <a href="reports.php">Reports</a>
         <a href="borrower_records.php">Borrower Records</a>
-        <a href="/php-108/logout.php" class="btn btn-danger">Logout</a>
+        <a href="/php-108/library-system/logout.php" class="btn btn-danger">Logout</a>
     </div>
 
     <!-- Toggle Button for Sidebar (on mobile) -->
