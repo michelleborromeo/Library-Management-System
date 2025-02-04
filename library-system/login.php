@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             header('Location: librarian/librarian_dashboard.php');
             exit();
         } elseif ($user['role_id'] == 3) {
-            header('Location: borrower/view_books.php');
+            header('Location: borrower/borrow_book.php');
             exit();
         }
     } else {
@@ -59,14 +59,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 <input type="text" name="username" class="form-control" required>
                             </div>
                             <div class="mb-3">
-                                <lab="password" class="form-label">Password</lab=>
+                                <label for="password" class="form-label">Password</label>
                                 <input type="password" name="password" class="form-control" required>
                             </div>
                             <button type="submit" class="btn btn-primary w-100">Login</button>
                         </form>
+                         <!-- Forgot Password Link -->
+                         <!-- <div class="mt-2">
+                            <a href="forgot_password.php" class="text-decoration-none">Forgot Password?</a>
+                        </div> -->
                         <div class="mt-3 text-center">
                             <a href="register.php" class="text-decoration-none">Don't have an account? Register here.</a>
                         </div>
+                       
                     </div>
                 </div>
             </div>
